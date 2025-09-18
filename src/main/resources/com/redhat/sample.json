@@ -1,0 +1,22 @@
+{
+    "transaction": [
+      {
+        "transactionId": "1"
+      },
+      {
+        "customerId": "8675309"
+      },
+      {
+        "amount": "100"
+      },
+      {
+        "currency": "USD"
+      },
+      {
+        "status": "Pending"
+      },
+      {
+        "message": "Trsnaction from company xyz"
+      }
+    ]
+  }

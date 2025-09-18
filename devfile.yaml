@@ -1,0 +1,55 @@
+schemaVersion: 2.2.2
+metadata:
+  name: workshop-module3
+  version: 1.0.0
+  description: DevSpaces workspace for Quarkus app
+attributes:
+  che-editor: vscode
+components:
+  - name: tools
+    container:
+      image: image-registry.openshift-image-registry.svc:5000/openshift/udi-rhel9:3.22
+      env:
+        - name: QUARKUS_HTTP_HOST
+          value: 0.0.0.0
+      endpoints:
+        - exposure: none
+          name: debug
+          protocol: tcp
+          targetPort: 5005
+        - exposure: public
+          name: camel-route
+          protocol: https
+          targetPort: 8080          
+          path: /process
+      volumeMounts:
+        - name: m2
+          path: /home/user/.m2
+      cpuLimit: '4'
+      cpuRequest: '1'
+      memoryLimit: '8G'
+      memoryRequest: '4G'
+      mountSources: true
+  - name: m2
+    volume:
+      size: 1G
+
+commands:
+  - id: 1-package
+    exec:
+      label: "1. Package the application"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "mvn package"
+      group:
+        kind: build
+        isDefault: true
+  - id: 2-build-and-deploy-to-openshift
+    exec:
+      label: "2. Build and deploy To Openshift using deploy.sh"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: source ${PROJECT_SOURCE}/deploy.sh
+      group:
+        kind: run
+        isDefault: true

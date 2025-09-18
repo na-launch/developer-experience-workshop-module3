@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: workshop-module3
+  title: Module 3
+  description: |
+    Event-Driven Microservices with Camel & Quarkus
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - camel
+    - quarkus
+  links:
+    - url: https://devspaces.apps.<cluster-domain>/#https://gitlab.apps.<cluster-domain>/developers/developer-experience-workshop-module3.git
+      title: "Launch from Dev Spaces"
+      icon: web
+spec:
+  type: module
+  lifecycle: production
+  owner: group:default/cluster-admins
+  gitlab:
+    remoteUrl: https://gitlab.apps.<cluster-domain>/developers/developer-experience-workshop-module3.git
+    owner: developers
+    repository: workshop-repository
+    branch: main
+  subcomponentOf: component:default/workshop-repository
+  dependsOn:
+    - component:default/workshop-agenda
+

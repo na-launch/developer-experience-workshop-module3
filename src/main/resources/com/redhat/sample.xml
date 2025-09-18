@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <transaction>
+        <transactionId>1</transactionId>
+        <customerId>12221</customerId>
+        <amount>100</amount>
+        <currency>USD</currency>
+        <status>Pending</status>
+        <message>Trsnaction from company x</message>
+    </transaction>
