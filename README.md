@@ -58,18 +58,18 @@ DSL Helper for REST: https://camel.apache.org/manual/rest-dsl.html
 
 5. If you are testing the /endpoint, you can use this string
 
-  ```bash
-  curl -X POST   http://workshop-module3-route-project-devspaces.apps.cluster-domain/process/json2xml   -H "Content-Type: application/json"   -H "Accept: application/xml"   -d '{"transactionId":"1","customerId":"12221","amount":100,"currency":"USD","status":"Pending","message":"Transaction from company x"}'
-  <?xml version="1.0" encoding="UTF-8"?>
-  <transaction>
-      <transactionId>1</transactionId>
-      <customerId>12221</customerId>
-      <amount>100</amount>
-      <currency>USD</currency>
-      <status>Pending</status>
-      <message>Transaction from company x</message>
-      </transaction>
-  ```
+   ```bash
+   curl -X POST   http://workshop-module3-route-project-devspaces.apps.cluster-domain/process/json2xml   -H "Content-Type: application/json"   -H "Accept: application/xml"   -d '{"transactionId":"1","customerId":"12221","amount":100,"currency":"USD","status":"Pending","message":"Transaction from company x"}'
+   <?xml version="1.0" encoding="UTF-8"?>
+   <transaction>
+       <transactionId>1</transactionId>
+       <customerId>12221</customerId>
+       <amount>100</amount>
+       <currency>USD</currency>
+       <status>Pending</status>
+       <message>Transaction from company x</message>
+       </transaction>
+   ```
 
 6. Validate your output 🌀 http://kafka-consumer-app-workshop-kafka.apps.cluster-domain
 
