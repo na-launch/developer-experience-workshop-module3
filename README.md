@@ -38,25 +38,23 @@ We have designed the system to do JSON -> XML. We would like you to finish the p
 1. Log in to MINIO and create a new bucket named 'camel-drop'
 
 2. Create 2 new topics in Kafka:
+
 - <user>-package-receiver
 - <user>-package-deliverer
 
-    Generate an XML formatted file (use the sample.xml in your resources folder) as a blueprint of the XML
+Generate an XML formatted file (use the sample.xml in your resources folder) as a blueprint of the XML
 
 3. Generate your topics @ https://kafka-ui-workshop-kafka.apps.cluster-domain
 
+In your Java folder, edit the routes.java file to write the 'reversing' logic. HINT: Flip the same functions that are currently in there
 
-    In your Java folder, edit the routes.java file to write the 'reversing' logic. HINT: Flip the same functions that are currently in there
-    * a. Create a DSL that will takea HTTP request that ingests <XML>. This DSL can be accessed via CURL or an API tool like POSTMAN
-    * b. Create a DSL that picks up a sample file in <user>-package-receiver, renders XML -> JSON
-    * c. Create a DSL that receives a file from your drop folder, this will require you to create a new bucket in MINIO
+- a. Create a DSL that will takea HTTP request that ingests <XML>. This DSL can be accessed via CURL or an API tool like POSTMAN
+- b. Create a DSL that picks up a sample file in <user>-package-receiver, renders XML -> JSON
+- c. Create a DSL that receives a file from your drop folder, this will require you to create a new bucket in MINIO
 
 4. For all of the above 3 (file, rest, kafka) send the final result to your <user>-package-deliverer topic.
 
-
-    DSL Helper for REST: https://camel.apache.org/manual/rest-dsl.html
-
-
+DSL Helper for REST: https://camel.apache.org/manual/rest-dsl.html
 
 5. If you are testing the /endpoint, you can use this string
 
@@ -74,6 +72,7 @@ We have designed the system to do JSON -> XML. We would like you to finish the p
   ```
 
 6. Validate your output 🌀 http://kafka-consumer-app-workshop-kafka.apps.cluster-domain
+
 ---
 
 ## ✅ Key Takeaways
@@ -82,3 +81,4 @@ We have designed the system to do JSON -> XML. We would like you to finish the p
 - Parsed one file format to another with 1 line of code
 - Harnessed the power of Camel Transformations / Extensions
 - Quickly leveraged a file bucket and Kafka
+
