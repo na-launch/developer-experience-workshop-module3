@@ -1,6 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
-  name: workshop-module3
+  name: workshop-module3-java
   version: 1.0.0
   description: DevSpaces workspace for Quarkus app
 attributes:
@@ -8,7 +8,7 @@ attributes:
 components:
   - name: tools
     container:
-      image: image-registry.openshift-image-registry.svc:5000/openshift/udi-rhel9:3.22
+      image: image-registry.openshift-image-registry.svc:5000/openshift/udi-rhel9:latest
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
