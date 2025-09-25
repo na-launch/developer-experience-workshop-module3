@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: workshop-module3
-  title: Module 3
+  name: workshop-module3-java
+  title: Module 3 - Java
   description: |
     Event-Driven Microservices with Camel & Quarkus
   annotations:
@@ -15,6 +15,3 @@ spec:
   lifecycle: production
   owner: group:default/cluster-admins
   subcomponentOf: component:default/workshop-repository
-  dependsOn:
-    - component:default/workshop-agenda
-
